@@ -16,14 +16,14 @@ export class ApiService {
             "Content-Type": "application/json",
         });
     }
-    getItems(): Observable<User[]> {
+    getUsers(): Observable<User[]> {
         return this.http.get<User[]>(this.basePath + '/users', { headers: this.headers });
     }
 
-    getItem(id: number): Observable<User> {
+    getUser(id: number): Observable<User> {
         return this.http.get<User>(this.basePath + '/users/' + id, { headers: this.headers });
     }
-    searchItem(searchValue: string): Observable<User[]> {
+    searchUser(searchValue: string): Observable<User[]> {
         return this.http.get<User[]>(this.basePath + '/users?name_like=' + searchValue);
     }
 }
